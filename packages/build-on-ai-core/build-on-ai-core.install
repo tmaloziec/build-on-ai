@@ -1,0 +1,15 @@
+post_install() {
+    echo "=== Build on AI Core installed ==="
+    echo "Welcome to Build on AI - Linux for Engineers!"
+    echo ""
+    echo "Next steps:"
+    echo "1. Install AI frameworks: sudo pacman -S python-tensorflow python-pytorch"
+    echo "2. Setup Jupyter: jupyter notebook --generate-config"
+    echo "3. Check documentation: /usr/share/build-on-ai/"
+    echo ""
+    echo "Happy engineering! 🚀"
+}
+
+post_upgrade() {
+    echo "Build on AI Core upgraded to version $2"
+}

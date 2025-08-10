@@ -1,0 +1,39 @@
+# Maintainer: Tomek <tomek@build-on-ai.dev>
+pkgname=build-on-ai-core
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Build on AI Core - Essential tools for engineers and AI/ML development"
+arch=('any')
+url="https://github.com/build-on-ai/build-on-ai"
+license=('MIT')
+depends=(
+    'python'
+    'python-pip'
+    'python-numpy'
+    'python-scipy'
+    'python-matplotlib'
+    'python-pandas'
+    'python-scikit-learn'
+    'jupyter-notebook'
+    'git'
+    'wget'
+    'curl'
+    'htop'
+    'tree'
+    'nano'
+    'vim'
+    'openssh'
+)
+optdepends=(
+    'python-tensorflow: Deep Learning framework'
+    'python-pytorch: PyTorch deep learning'
+    'docker: Containerization'
+    'code: Visual Studio Code'
+)
+
+package() {
+    install -dm755 "$pkgdir/etc/build-on-ai"
+    install -dm755 "$pkgdir/usr/share/build-on-ai"
+    echo "BUILD_ON_AI_VERSION=$pkgver" > "$pkgdir/etc/build-on-ai/version"
+    echo "Build on AI Core $pkgver installed successfully" > "$pkgdir/usr/share/build-on-ai/welcome.txt"
+}
