@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUILD ON AI - Materials Package</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 15px;
+            border: 1px solid #00ffff;
+        }
+
+        .header h1 {
+            color: #00ffff;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .material-card {
+            background: #1a1a2e;
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .material-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00ffff, #88ccff, #00ffff);
+        }
+
+        .material-card h3 {
+            color: #00ffff;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #00ffff, #0099cc);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #00ccff, #0066aa);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .preview-area {
+            background: #0f0f0f;
+            border: 1px dashed #00ffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .color-swatch {
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: monospace;
+            font-weight: bold;
+            border: 1px solid #333;
+        }
+
+        .primary { background: #00ffff; color: #000; }
+        .secondary { background: #88ccff; color: #000; }
+        .dark { background: #0a0a0a; color: #fff; border-color: #00ffff; }
+        .gradient { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; }
+
+        .instructions {
+            background: #1a1a2e;
+            border-left: 4px solid #00ffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .file-tree {
+            background: #0f0f0f;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            border: 1px solid #333;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .specs-table th {
+            background: #1a1a2e;
+            color: #00ffff;
+        }
+
+        .download-all {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 15px;
+            border: 2px solid #00ffff;
+        }
+
+        .download-all h2 {
+            color: #00ffff;
+            margin-bottom: 20px;
+        }
+
+        .version-info {
+            background: #0f0f0f;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>BUILD ON AI</h1>
+        <p>Kompletna paczka materiałów logo - gotowa do pobrania</p>
+    </div>
+
+    <div class="instructions">
+        <h2>📦 Instrukcja pobierania</h2>
+        <p><strong>Krok 1:</strong> Kliknij prawym przyciskiem na wybranym materiale</p>
+        <p><strong>Krok 2:</strong> Wybierz "Zapisz jako..." lub "Save as..."</p>
+        <p><strong>Krok 3:</strong> Zapisz plik w folderze projektu</p>
+        <p><strong>💡 Tip:</strong> Możesz też skopiować kod i wkleić do edytora tekstu</p>
+    </div>
+
+    <div class="package-grid">
+        <!-- HTML Logo Files -->
+        <div class="material-card">
+            <h3>🌐 Pliki HTML</h3>
+            <p>Interaktywne wersje logo z animacjami</p>
+            
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('build-on-ai-logo.html', getMainLogoHTML())">
+                    Logo główne (HTML)
+                </button>
+            </div>
+            
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('build-on-ai-compact.html', getCompactLogoHTML())">
+                    Logo kompaktowe (HTML)
+                </button>
+            </div>
+
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('build-on-ai-banner.html', getBannerHTML())">
+                    Banner poziomy (HTML)
+                </button>
+            </div>
+        </div>
+
+        <!-- SVG Files -->
+        <div class="material-card">
+            <h3>🎨 Pliki SVG</h3>
+            <p>Wektorowe logo - skalowalne bez utraty jakości</p>
+            
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('build-on-ai-logo.svg', getMainLogoSVG())">
+                    Logo SVG
+                </button>
+            </div>
+            
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('build-on-ai-icon.svg', getIconSVG())">
+                    Ikona SVG
+                </button>
+            </div>
+
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('build-on-ai-monochrome.svg', getMonochromeSVG())">
+                    Wersja monochromatyczna
+                </button>
+            </div>
+        </div>
+
+        <!-- CSS Files -->
+        <div class="material-card">
+            <h3>💎 Pliki CSS</h3>
+            <p>Style i animacje do wykorzystania w projektach</p>
+            
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('build-on-ai-styles.css', getMainCSS())">
+                    Style główne (CSS)
+                </button>
+            </div>
+            
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('animations.css', getAnimationsCSS())">
+                    Animacje (CSS)
+                </button>
+            </div>
+
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('brand-colors.css', getColorsCSS())">
+                    Paleta kolorów (CSS)
+                </button>
+            </div>
+        </div>
+
+        <!-- Documentation -->
+        <div class="material-card">
+            <h3>📚 Dokumentacja</h3>
+            <p>Instrukcje użycia i wytyczne brandowe</p>
+            
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('brand-guidelines.md', getBrandGuidelines())">
+                    Wytyczne brandowe
+                </button>
+            </div>
+            
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('usage-examples.html', getUsageExamples())">
+                    Przykłady użycia
+                </button>
+            </div>
+
+            <div style="margin: 10px 0;">
+                <button class="download-btn" onclick="downloadFile('README.md', getReadmeFile())">
+                    README.md
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color Palette -->
+    <div class="material-card">
+        <h3>🎨 Paleta kolorów</h3>
+        <div class="color-palette">
+            <div class="color-swatch primary">#00FFFF<br>Primary</div>
+            <div class="color-swatch secondary">#88CCFF<br>Secondary</div>
+            <div class="color-swatch dark">#0A0A0A<br>Background</div>
+            <div class="color-swatch gradient">Gradient<br>1A1A2E → 16213E</div>
+        </div>
+        <button class="download-btn" onclick="downloadFile('color-palette.json', getColorPalette())">
+            Pobierz paletę (JSON)
+        </button>
+    </div>
+
+    <!-- Specifications -->
+    <div class="material-card">
+        <h3>📐 Specyfikacje techniczne</h3>
+        <table class="specs-table">
+            <tr><th>Element</th><th>Wartość</th></tr>
+            <tr><td>Kolor główny</td><td>#00FFFF (Cyan)</td></tr>
+            <tr><td>Kolor pomocniczy</td><td>#88CCFF</td></tr>
+            <tr><td>Tło</td><td>#0A0A0A</td></tr>
+            <tr><td>Font główny</td><td>Segoe UI, sans-serif</td></tr>
+            <tr><td>Rozmiar logo</td><td>800x600px (optimum)</td></tr>
+            <tr><td>Format</td><td>HTML, SVG, CSS</td></tr>
+        </table>
+    </div>
+
+    <!-- File Structure -->
+    <div class="material-card">
+        <h3>📁 Struktura plików</h3>
+        <div class="file-tree">
+build-on-ai-logo/
+├── html/
+│   ├── build-on-ai-logo.html
+│   ├── build-on-ai-compact.html
+│   └── build-on-ai-banner.html
+├── svg/
+│   ├── build-on-ai-logo.svg
+│   ├── build-on-ai-icon.svg
+│   └── build-on-ai-monochrome.svg
+├── css/
+│   ├── build-on-ai-styles.css
+│   ├── animations.css
+│   └── brand-colors.css
+├── docs/
+│   ├── brand-guidelines.md
+│   ├── usage-examples.html
+│   └── README.md
+└── assets/
+    └── color-palette.json
+        </div>
+    </div>
+
+    <div class="download-all">
+        <h2>🚀 Pobierz wszystko jednym klikiem</h2>
+        <p>Kompletna paczka wszystkich materiałów</p>
+        <button class="download-btn" onclick="downloadAllFiles()" style="font-size: 1.2em; padding: 15px 30px;">
+            📦 POBIERZ CAŁĄ PACZKĘ
+        </button>
+    </div>
+
+    <div class="version-info">
+        <h3>📋 Informacje o wersji</h3>
+        <p><strong>Wersja:</strong> 1.0.0</p>
+        <p><strong>Data:</strong> Styczeń 2025</p>
+        <p><strong>Zgodność:</strong> Wszystkie nowoczesne przeglądarki</p>
+        <p><strong>Licencja:</strong> Do użytku w projekcie AI Inside</p>
+    </div>
+
+    <script>
+        // Funkcja do pobierania plików
+        function downloadFile(filename, content) {
+            const element = document.createElement('a');
+            const file = new Blob([content], { type: 'text/plain' });
+            element.href = URL.createObjectURL(file);
+            element.download = filename;
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        // Główne logo HTML
+        function getMainLogoHTML() {
+            return `<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUILD ON AI - Logo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 40px rgba(0, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .background-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        .dashed-line {
+            position: absolute;
+            border: 1px dashed #00ffff;
+            opacity: 0.6;
+        }
+
+        .line-1 { width: 150px; top: 10%; left: 5%; transform: rotate(15deg); }
+        .line-2 { width: 120px; top: 20%; right: 10%; transform: rotate(-25deg); }
+        .line-3 { width: 100px; top: 40%; left: 15%; transform: rotate(45deg); }
+        .line-4 { width: 80px; top: 60%; right: 20%; transform: rotate(-15deg); }
+        .line-5 { width: 90px; bottom: 20%; left: 10%; transform: rotate(30deg); }
+        .line-6 { width: 110px; bottom: 15%; right: 15%; transform: rotate(-40deg); }
+        .line-7 { width: 70px; top: 35%; left: 70%; transform: rotate(60deg); }
+        .line-8 { width: 95px; top: 75%; left: 60%; transform: rotate(-20deg); }
+
+        .neural-network {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .neural-node {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #00ffff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .neural-connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            opacity: 0.6;
+            animation: flow 3s linear infinite;
+        }
+
+        .node-1 { top: 25%; left: 20%; animation-delay: 0s; }
+        .node-2 { top: 35%; left: 80%; animation-delay: 0.5s; }
+        .node-3 { top: 65%; left: 15%; animation-delay: 1s; }
+        .node-4 { top: 70%; left: 85%; animation-delay: 1.5s; }
+        .node-5 { top: 45%; left: 90%; animation-delay: 0.3s; }
+        .node-6 { top: 55%; left: 10%; animation-delay: 0.8s; }
+
+        .conn-1 { top: 27%; left: 21%; width: 300px; transform: rotate(5deg); }
+        .conn-2 { top: 45%; left: 12%; width: 350px; transform: rotate(-10deg); }
+        .conn-3 { top: 67%; left: 16%; width: 320px; transform: rotate(8deg); }
+
+        .main-title {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: center;
+            letter-spacing: 4px;
+            text-shadow: 
+                0 0 20px rgba(0, 255, 255, 0.8),
+                0 0 40px rgba(0, 255, 255, 0.4);
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        .subtitle {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: 300;
+            color: #00ffff;
+            text-align: center;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        .tagline {
+            position: absolute;
+            bottom: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #88ccff;
+            text-align: center;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 0.6; 
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.2);
+                box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+            }
+        }
+
+        @keyframes flow {
+            0% { opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 20px rgba(0, 255, 255, 0.8),
+                    0 0 40px rgba(0, 255, 255, 0.4);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 30px rgba(0, 255, 255, 1),
+                    0 0 60px rgba(0, 255, 255, 0.6);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .logo-container {
+                width: 90vw;
+                height: 70vh;
+            }
+            .main-title {
+                font-size: 36px;
+            }
+            .subtitle {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="background-lines">
+            <div class="dashed-line line-1"></div>
+            <div class="dashed-line line-2"></div>
+            <div class="dashed-line line-3"></div>
+            <div class="dashed-line line-4"></div>
+            <div class="dashed-line line-5"></div>
+            <div class="dashed-line line-6"></div>
+            <div class="dashed-line line-7"></div>
+            <div class="dashed-line line-8"></div>
+        </div>
+
+        <div class="neural-network">
+            <div class="neural-node node-1"></div>
+            <div class="neural-node node-2"></div>
+            <div class="neural-node node-3"></div>
+            <div class="neural-node node-4"></div>
+            <div class="neural-node node-5"></div>
+            <div class="neural-node node-6"></div>
+            
+            <div class="neural-connection conn-1"></div>
+            <div class="neural-connection conn-2"></div>
+            <div class="neural-connection conn-3"></div>
+        </div>
+
+        <h1 class="main-title">BUILD ON AI</h1>
+        <h2 class="subtitle">Linux for Engineers</h2>
+        <p class="tagline">IT • Civil • Mechanical • Automation • Mechatronics</p>
+    </div>
+</body>
+</html>`;
+        }
+
+        // Logo kompaktowe
+        function getCompactLogoHTML() {
+            return `<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUILD ON AI - Compact Logo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .compact-logo {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #00ffff;
+            overflow: hidden;
+        }
+
+        .compact-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .compact-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: center;
+            letter-spacing: 3px;
+            text-shadow: 
+                0 0 15px rgba(0, 255, 255, 0.8),
+                0 0 30px rgba(0, 255, 255, 0.4);
+            z-index: 1;
+        }
+
+        .compact-subtitle {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #88ccff;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="compact-logo">
+        <h1 class="compact-title">BUILD ON AI</h1>
+        <p class="compact-subtitle">Linux for Engineers</p>
+    </div>
+</body>
+</html>`;
+        }
+
+        // Banner poziomy
+        function getBannerHTML() {
+            return `<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUILD ON AI - Banner</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .banner {
+            position: relative;
+            width: 1200px;
+            height: 300px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            border: 1px solid #00ffff;
+            overflow: hidden;
+        }
+
+        .banner-left {
+            flex: 1;
+        }
+
+        .banner-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 4px;
+            text-shadow: 
+                0 0 20px rgba(0, 255, 255, 0.8),
+                0 0 40px rgba(0, 255, 255, 0.4);
+            margin: 0;
+        }
+
+        .banner-subtitle {
+            font-size: 20px;
+            color: #00ffff;
+            letter-spacing: 2px;
+            margin: 10px 0 0 0;
+        }
+
+        .banner-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .neural-dots {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .neural-dot {
+            width: 8px;
+            height: 8px;
+            background: #00ffff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .neural-dot:nth-child(odd) { animation-delay: 0s; }
+        .neural-dot:nth-child(even) { animation-delay: 1s; }
+
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 0.6; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-left">
+            <h1 class="banner-title">BUILD ON AI</h1>
+            <h2 class="banner-subtitle">Linux for Engineers</h2>
+        </div>
+        <div class="banner-right">
+            <div class="neural-dots">
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+                <div class="neural-dot"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>`;
+        }
+
+        // SVG Logo
+        function getMainLogoSVG() {
+            return `<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)" rx="20"/>
+  
+  <!-- Background dashed lines -->
+  <line x1="40" y1="60" x2="160" y2="80" stroke="#00ffff" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(15 100 70)"/>
+  <line x1="720" y1="120" x2="600" y2="100" stroke="#00ffff" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(-25 660 110)"/>
+  <line x1="120" y1="240" x2="220" y2="260" stroke="#00ffff" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(45 170 250)"/>
+  <line x1="640" y1="360" x2="560" y2="340" stroke="#00ffff" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(-15 600 350)"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="160" cy="150" r="3" fill="#00ffff" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="210" r="3" fill="#00ffff" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="120" cy="390" r="3" fill="#00ffff" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="680" cy="420" r="3" fill="#00ffff" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Neural connections -->
+  <line x1="160" y1="150" x2="460" y2="170" stroke="#00ffff" stroke-width="1" opacity="0.6">
+    <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite"/>
+  </line>
+  <line x1="120" y1="270" x2="470" y2="250" stroke="#00ffff" stroke-width="1" opacity="0.6">
+    <animate attributeName="opacity" values="0;0.8;0" dur="3s" begin="1s" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Main title -->
+  <text x="400" y="120" font-family="Segoe UI, sans-serif" font-size="48" font-weight="800" 
+        fill="#ffffff" text-anchor="middle" letter-spacing="4px" filter="url(#glow)">
+    BUILD ON AI
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="480" font-family="Segoe UI, sans-serif" font-size="24" font-weight="300" 
+        fill="#00ffff" text-anchor="middle" letter-spacing="2px" opacity="0.9">
+    Linux for Engineers
+  </text>
+  
+  <!-- Tagline -->
+  <text x="400" y="520" font-family="Segoe UI, sans-serif" font-size="14" 
+        fill="#88ccff" text-anchor="middle" letter-spacing="1px" opacity="0.7">
+    IT • Civil • Mechanical • Automation • Mechatronics
+  </text>
+</svg>`;
+        }
+
+        // Ikona SVG
+        function getIconSVG() {
+            return `<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="iconGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#iconGradient)" stroke="#00ffff" stroke-width="2"/>
+  
+  <!-- Neural network pattern -->
+  <circle cx="60" cy="60" r="4" fill="#00ffff" filter="url(#iconGlow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="80" r="4" fill="#00ffff" filter="url(#iconGlow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="70" cy="140" r="4" fill="#00ffff" filter="url(#iconGlow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="130" cy="120" r="4" fill="#00ffff" filter="url(#iconGlow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Connections -->
+  <line x1="60" y1="60" x2="140" y2="80" stroke="#00ffff" stroke-width="1" opacity="0.4"/>
+  <line x1="140" y1="80" x2="130" y2="120" stroke="#00ffff" stroke-width="1" opacity="0.4"/>
+  <line x1="70" y1="140" x2="130" y2="120" stroke="#00ffff" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Text -->
+  <text x="100" y="105" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" 
+        fill="#ffffff" text-anchor="middle" filter="url(#iconGlow)">
+    BUILD
+  </text>
+  <text x="100" y="125" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" 
+        fill="#ffffff" text-anchor="middle" filter="url(#iconGlow)">
+    ON AI
+  </text>
+</svg>`;
+        }
+
+        // Wersja monochromatyczna
+        function getMonochromeSVG() {
+            return `<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#ffffff" rx="20"/>
+  
+  <!-- Background dashed lines -->
+  <line x1="40" y1="60" x2="160" y2="80" stroke="#333333" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(15 100 70)"/>
+  <line x1="720" y1="120" x2="600" y2="100" stroke="#333333" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(-25 660 110)"/>
+  <line x1="120" y1="240" x2="220" y2="260" stroke="#333333" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(45 170 250)"/>
+  <line x1="640" y1="360" x2="560" y2="340" stroke="#333333" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(-15 600 350)"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="160" cy="150" r="3" fill="#333333"/>
+  <circle cx="640" cy="210" r="3" fill="#333333"/>
+  <circle cx="120" cy="390" r="3" fill="#333333"/>
+  <circle cx="680" cy="420" r="3" fill="#333333"/>
+  
+  <!-- Neural connections -->
+  <line x1="160" y1="150" x2="460" y2="170" stroke="#333333" stroke-width="1" opacity="0.6"/>
+  <line x1="120" y1="270" x2="470" y2="250" stroke="#333333" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Main title -->
+  <text x="400" y="120" font-family="Segoe UI, sans-serif" font-size="48" font-weight="800" 
+        fill="#000000" text-anchor="middle" letter-spacing="4px">
+    BUILD ON AI
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="480" font-family="Segoe UI, sans-serif" font-size="24" font-weight="300" 
+        fill="#333333" text-anchor="middle" letter-spacing="2px">
+    Linux for Engineers
+  </text>
+  
+  <!-- Tagline -->
+  <text x="400" y="520" font-family="Segoe UI, sans-serif" font-size="14" 
+        fill="#666666" text-anchor="middle" letter-spacing="1px">
+    IT • Civil • Mechanical • Automation • Mechatronics
+  </text>
+</svg>`;
+        }
+
+        // CSS Style główne
+        function getMainCSS() {
+            return `/* BUILD ON AI - Main Styles */
+
+:root {
+    --primary-color: #00ffff;
+    --secondary-color: #88ccff;
+    --background-dark: #0a0a0a;
+    --background-gradient-start: #1a1a2e;
+    --background-gradient-end: #16213e;
+    --text-primary: #ffffff;
+    --text-secondary: #00ffff;
+    --text-muted: #88ccff;
+}
+
+.build-on-ai-logo {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    background: linear-gradient(135deg, 
+        var(--background-dark) 0%, 
+        var(--background-gradient-start) 50%, 
+        var(--background-gradient-end) 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 40px rgba(0, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.build-on-ai-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-align: center;
+    letter-spacing: 4px;
+    text-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.8),
+        0 0 40px rgba(0, 255, 255, 0.4);
+    margin: 0;
+}
+
+.build-on-ai-subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    text-align: center;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    margin: 10px 0 0 0;
+}
+
+.build-on-ai-tagline {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin: 5px 0 0 0;
+}
+
+.build-on-ai-compact {
+    width: 400px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-color);
+    position: relative;
+}
+
+.build-on-ai-compact .build-on-ai-title {
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .build-on-ai-logo {
+        width: 90vw;
+        height: 70vh;
+    }
+    .build-on-ai-title {
+        font-size: 36px;
+    }
+    .build-on-ai-subtitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    .build-on-ai-compact {
+        width: 90vw;
+        height: 150px;
+    }
+    .build-on-ai-compact .build-on-ai-title {
+        font-size: 24px;
+    }
+}`;
+        }
+
+        // CSS Animacje
+        function getAnimationsCSS() {
+            return `/* BUILD ON AI - Animations */
+
+/* Neural network animations */
+@keyframes pulse {
+    0%, 100% { 
+        opacity: 0.6; 
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    }
+}
+
+@keyframes flow {
+    0% { opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+
+@keyframes titleGlow {
+    0%, 100% { 
+        text-shadow: 
+            0 0 20px rgba(0, 255, 255, 0.8),
+            0 0 40px rgba(0, 255, 255, 0.4);
+    }
+    50% { 
+        text-shadow: 
+            0 0 30px rgba(0, 255, 255, 1),
+            0 0 60px rgba(0, 255, 255, 0.6);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Neural network elements */
+.neural-node {
+    width: 6px;
+    height: 6px;
+    background: #00ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.neural-connection {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    opacity: 0.6;
+    animation: flow 3s linear infinite;
+}
+
+/* Animation delays for neural nodes */
+.neural-node:nth-child(1) { animation-delay: 0s; }
+.neural-node:nth-child(2) { animation-delay: 0.5s; }
+.neural-node:nth-child(3) { animation-delay: 1s; }
+.neural-node:nth-child(4) { animation-delay: 1.5s; }
+.neural-node:nth-child(5) { animation-delay: 0.3s; }
+.neural-node:nth-child(6) { animation-delay: 0.8s; }
+
+/* Title animations */
+.animated-title {
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+.slide-in-left {
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInFromRight 1s ease-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Hover effects */
+.build-on-ai-logo:hover .build-on-ai-title {
+    animation-duration: 1.5s;
+}
+
+.build-on-ai-compact:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Loading animation */
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    border: 2px solid transparent;
+    border-top: 2px solid #00ffff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: loading 1s linear infinite;
+}`;
+        }
+
+        // CSS Kolory
+        function getColorsCSS() {
+            return `/* BUILD ON AI - Brand Colors */
+
+:root {
+    /* Primary Colors */
+    --primary-cyan: #00ffff;
+    --primary-cyan-rgb: 0, 255, 255;
+    
+    /* Secondary Colors */
+    --secondary-light-blue: #88ccff;
+    --secondary-light-blue-rgb: 136, 204, 255;
+    
+    /* Background Colors */
+    --background-black: #0a0a0a;
+    --background-black-rgb: 10, 10, 10;
+    --background-dark-blue: #1a1a2e;
+    --background-dark-blue-rgb: 26, 26, 46;
+    --background-navy: #16213e;
+    --background-navy-rgb: 22, 33, 62;
+    
+    /* Text Colors */
+    --text-white: #ffffff;
+    --text-white-rgb: 255, 255, 255;
+    --text-cyan: #00ffff;
+    --text-cyan-rgb: 0, 255, 255;
+    --text-light-blue: #88ccff;
+    --text-light-blue-rgb: 136, 204, 255;
+    --text-gray: #cccccc;
+    --text-gray-rgb: 204, 204, 204;
+    
+    /* Gradient Definitions */
+    --gradient-primary: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    --gradient-secondary: linear-gradient(135deg, #1a1a2e, #16213e);
+    --gradient-accent: linear-gradient(90deg, transparent, #00ffff, transparent);
+    
+    /* Shadow Colors */
+    --shadow-cyan: rgba(0, 255, 255, 0.8);
+    --shadow-cyan-soft: rgba(0, 255, 255, 0.4);
+    --shadow-cyan-hard: rgba(0, 255, 255, 1);
+    
+    /* Border Colors */
+    --border-cyan: #00ffff;
+    --border-gray: #333333;
+    --border-white-soft: rgba(255, 255, 255, 0.1);
+}
+
+/* Color utility classes */
+.color-primary { color: var(--primary-cyan); }
+.color-secondary { color: var(--secondary-light-blue); }
+.color-white { color: var(--text-white); }
+.color-gray { color: var(--text-gray); }
+
+.bg-primary { background-color: var(--primary-cyan); }
+.bg-secondary { background-color: var(--secondary-light-blue); }
+.bg-dark { background-color: var(--background-black); }
+.bg-navy { background-color: var(--background-navy); }
+
+.bg-gradient-primary { background: var(--gradient-primary); }
+.bg-gradient-secondary { background: var(--gradient-secondary); }
+
+.border-primary { border-color: var(--border-cyan); }
+.border-gray { border-color: var(--border-gray); }
+
+/* Glow effects using brand colors */
+.glow-primary {
+    box-shadow: 0 0 20px var(--shadow-cyan);
+}
+
+.glow-soft {
+    box-shadow: 0 0 10px var(--shadow-cyan-soft);
+}
+
+.text-glow {
+    text-shadow: 
+        0 0 20px var(--shadow-cyan),
+        0 0 40px var(--shadow-cyan-soft);
+}
+
+/* Color combinations for different contexts */
+.theme-dark {
+    background: var(--background-black);
+    color: var(--text-white);
+}
+
+.theme-gradient {
+    background: var(--gradient-primary);
+    color: var(--text-white);
+}
+
+.theme-accent {
+    background: var(--background-navy);
+    color: var(--primary-cyan);
+    border: 1px solid var(--border-cyan);
+}
+
+/* Opacity variants */
+.opacity-10 { opacity: 0.1; }
+.opacity-20 { opacity: 0.2; }
+.opacity-30 { opacity: 0.3; }
+.opacity-40 { opacity: 0.4; }
+.opacity-50 { opacity: 0.5; }
+.opacity-60 { opacity: 0.6; }
+.opacity-70 { opacity: 0.7; }
+.opacity-80 { opacity: 0.8; }
+.opacity-90 { opacity: 0.9; }
+
+/* RGBA helpers for custom transparency */
+.bg-primary-10 { background-color: rgba(var(--primary-cyan-rgb), 0.1); }
+.bg-primary-20 { background-color: rgba(var(--primary-cyan-rgb), 0.2); }
+.bg-primary-30 { background-color: rgba(var(--primary-cyan-rgb), 0.3); }
+
+.bg-dark-80 { background-color: rgba(var(--background-black-rgb), 0.8); }
+.bg-dark-90 { background-color: rgba(var(--background-black-rgb), 0.9); }`;
+        }
+
+        // Wytyczne brandowe
+        function getBrandGuidelines() {
+            return `# BUILD ON AI - Brand Guidelines
+
+## Przegląd marki
+
+**BUILD ON AI** to marka reprezentująca dystrybucję Linux zoptymalizowaną dla inżynierów z różnych dziedzin, ze szczególnym fokusem na technologie AI i machine learning.
+
+## Logo i identyfikacja wizualna
+
+### Główne elementy marki
+
+1. **Logotype**: "BUILD ON AI"
+2. **Tagline**: "Linux for Engineers"
+3. **Specjalizacje**: IT • Civil • Mechanical • Automation • Mechatronics
+
+### Kolorystyka
+
+#### Kolory podstawowe
+- **Cyan Primary**: #00FFFF
+  - Główny kolor marki
+  - Używany do logotypu, przycisków, akcentów
+  - RGB: 0, 255, 255
+
+- **Light Blue Secondary**: #88CCFF
+  - Kolor pomocniczy
+  - Używany do taglines, podtekstów
+  - RGB: 136, 204, 255
+
+#### Kolory tła
+- **Deep Black**: #0A0A0A
+  - Główne tło
+  - RGB: 10, 10, 10
+
+- **Dark Blue**: #1A1A2E
+  - Tło gradientowe (start)
+  - RGB: 26, 26, 46
+
+- **Navy**: #16213E
+  - Tło gradientowe (koniec)
+  - RGB: 22, 33, 62
+
+#### Kolory tekstu
+- **White**: #FFFFFF - tekst główny
+- **Cyan**: #00FFFF - tekst akcentowy
+- **Light Blue**: #88CCFF - tekst pomocniczy
+
+### Typografia
+
+#### Font główny
+- **Rodzina**: Segoe UI, Tahoma, Geneva, Verdana, sans-serif
+- **Logotype**: 
+  - Rozmiar: 48px
+  - Waga: 800 (extra bold)
+  - Letter-spacing: 4px
+
+#### Font pomocniczy
+- **Subtitle**: 
+  - Rozmiar: 24px
+  - Waga: 300 (light)
+  - Letter-spacing: 2px
+
+- **Tagline**: 
+  - Rozmiar: 14px
+  - Waga: 400 (normal)
+  - Letter-spacing: 1px
+
+### Efekty wizualne
+
+#### Świecenie (Glow)
+- **Text shadow**: 
+  - 0 0 20px rgba(0, 255, 255, 0.8)
+  - 0 0 40px rgba(0, 255, 255, 0.4)
+
+#### Animacje
+- **Pulse**: 2s ease-in-out infinite
+- **Flow**: 3s linear infinite
+- **Title glow**: 3s ease-in-out infinite
+
+### Elementy graficzne
+
+#### Sieci neuronowe
+- **Węzły**: 6px diameter, cyan glow
+- **Połączenia**: 1px height, gradient transparency
+- **Animacje**: Staggered timing dla dynamicznego efektu
+
+#### Linie przerywane
+- **Stroke**: 1px dashed cyan
+- **Opacity**: 0.3-0.6
+- **Pattern**: 8px dash, 4px gap
+
+## Wytyczne użycia
+
+### Zalecane zastosowania
+
+1. **Dokumentacja techniczna**
+   - Headers stron
+   - Okładki dokumentów
+   - Prezentacje
+
+2. **Interfejsy użytkownika**
+   - Splash screens
+   - Loading screens
+   - About dialogs
+
+3. **Marketing materials**
+   - Strony internetowe
+   - Banery
+   - Social media graphics
+
+### Minimalne rozmiary
+
+- **Logo główne**: minimum 400px szerokości
+- **Logo kompaktowe**: minimum 200px szerokości
+- **Ikona**: minimum 32px
+
+### Przestrzeń wolna
+
+- **Wokół logo**: minimum 20px padding
+- **Między elementami**: minimum 10px spacing
+
+### Niedozwolone użycia
+
+❌ Zmiana kolorów marki
+❌ Dodawanie dodatkowych elementów graficznych
+❌ Zmiana proporcji logo
+❌ Używanie na zbyt jasnych tłach bez kontrastu
+❌ Kompresja powodująca utratę jakości
+
+## Adaptacje
+
+### Różne rozmiary
+- **Duże**: Pełna wersja z animacjami
+- **Średnie**: Kompaktowa wersja
+- **Małe**: Tylko logotype bez tagline
+
+### Różne konteksty
+- **Dark mode**: Standardowa kolorystyka
+- **Light mode**: Monochromatyczna wersja
+- **Print**: SVG bez animacji
+
+## Pliki źródłowe
+
+### Formaty dostępne
+- **HTML**: Interaktywne wersje z animacjami
+- **SVG**: Wektorowe logo skalowalne
+- **CSS**: Style i animacje do implementacji
+
+### Struktura plików
+\`\`\`
+build-on-ai-brand/
+├── html/          # Interaktywne wersje
+├── svg/           # Wektorowe logo
+├── css/           # Style i animacje
+└── docs/          # Dokumentacja
+\`\`\`
+
+## Kontakt
+
+Dla pytań dotyczących użycia marki BUILD ON AI, skontaktuj się z zespołem rozwoju projektu.
+
+---
+
+*Wersja 1.0.0 - Styczeń 2025*`;
+        }
+
+        // Przykłady użycia
+        function getUsageExamples() {
+            return `<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUILD ON AI - Usage Examples</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .example-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #1a1a2e;
+            border-radius: 15px;
+            border: 1px solid #00ffff;
+        }
+
+        .example-title {
+            color: #00ffff;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00ffff;
+            padding-bottom: 10px;
+        }
+
+        .code-block {
+            background: #0f0f0f;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .preview {
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px dashed #00ffff;
+        }
+
+        .inline-logo {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 1px solid #00ffff;
+            border-radius: 8px;
+            color: #00ffff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .header-example {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .header-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 4px;

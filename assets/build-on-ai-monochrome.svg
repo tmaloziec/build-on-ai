@@ -1,0 +1,38 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#ffffff" rx="20"/>
+  
+  <!-- Background dashed lines -->
+  <line x1="40" y1="60" x2="160" y2="80" stroke="#333333" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(15 100 70)"/>
+  <line x1="720" y1="120" x2="600" y2="100" stroke="#333333" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(-25 660 110)"/>
+  <line x1="120" y1="240" x2="220" y2="260" stroke="#333333" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(45 170 250)"/>
+  <line x1="640" y1="360" x2="560" y2="340" stroke="#333333" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(-15 600 350)"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="160" cy="150" r="3" fill="#333333"/>
+  <circle cx="640" cy="210" r="3" fill="#333333"/>
+  <circle cx="120" cy="390" r="3" fill="#333333"/>
+  <circle cx="680" cy="420" r="3" fill="#333333"/>
+  
+  <!-- Neural connections -->
+  <line x1="160" y1="150" x2="460" y2="170" stroke="#333333" stroke-width="1" opacity="0.6"/>
+  <line x1="120" y1="270" x2="470" y2="250" stroke="#333333" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Main title -->
+  <text x="400" y="120" font-family="Segoe UI, sans-serif" font-size="48" font-weight="800" 
+        fill="#000000" text-anchor="middle" letter-spacing="4px">
+    BUILD ON AI
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="480" font-family="Segoe UI, sans-serif" font-size="24" font-weight="300" 
+        fill="#333333" text-anchor="middle" letter-spacing="2px">
+    Linux for Engineers
+  </text>
+  
+  <!-- Tagline -->
+  <text x="400" y="520" font-family="Segoe UI, sans-serif" font-size="14" 
+        fill="#666666" text-anchor="middle" letter-spacing="1px">
+    IT • Civil • Mechanical • Automation • Mechatronics
+  </text>
+</svg>

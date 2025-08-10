@@ -1,0 +1,100 @@
+/* BUILD ON AI - Main Styles */
+
+:root {
+    --primary-color: #00ffff;
+    --secondary-color: #88ccff;
+    --background-dark: #0a0a0a;
+    --background-gradient-start: #1a1a2e;
+    --background-gradient-end: #16213e;
+    --text-primary: #ffffff;
+    --text-secondary: #00ffff;
+    --text-muted: #88ccff;
+}
+
+.build-on-ai-logo {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    background: linear-gradient(135deg, 
+        var(--background-dark) 0%, 
+        var(--background-gradient-start) 50%, 
+        var(--background-gradient-end) 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 40px rgba(0, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.build-on-ai-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-align: center;
+    letter-spacing: 4px;
+    text-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.8),
+        0 0 40px rgba(0, 255, 255, 0.4);
+    margin: 0;
+}
+
+.build-on-ai-subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    text-align: center;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    margin: 10px 0 0 0;
+}
+
+.build-on-ai-tagline {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin: 5px 0 0 0;
+}
+
+.build-on-ai-compact {
+    width: 400px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-color);
+    position: relative;
+}
+
+.build-on-ai-compact .build-on-ai-title {
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .build-on-ai-logo {
+        width: 90vw;
+        height: 70vh;
+    }
+    .build-on-ai-title {
+        font-size: 36px;
+    }
+    .build-on-ai-subtitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    .build-on-ai-compact {
+        width: 90vw;
+        height: 150px;
+    }
+    .build-on-ai-compact .build-on-ai-title {
+        font-size: 24px;
+    }
+}

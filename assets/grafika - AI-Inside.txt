@@ -1,0 +1,54 @@
+Styl wizualny:
+Motyw: Neo-minimalism meets ambient intelligence
+
+Tło: Delikatnie rozmyte, półprzezroczyste panele na ciemnym tle z gradientem (np. od głębokiego grafitu do granatu z subtelnymi "żyłkami" danych).
+
+Kolory dominujące:
+
+Czerń / Grafit – jako fundament
+
+Cyan i błękit elektryczny – dla akcentów i interakcji
+
+Biel i srebro – dla czytelności i szkieletu UI
+
+Akcent AI: animowane światło pulsujące jak „oddech” systemu AI
+
+Elementy charakterystyczne:
+1. AI Core Widget (stały, kontekstowy komponent)
+Animowany, subtelnie świecący "rdzeń AI" – np. forma holograficznego kręgu z pulsem, który reaguje na aktywność użytkownika.
+
+Może pełnić rolę dynamicznego asystenta, podpowiadającego sugestie w czasie rzeczywistym.
+
+2. Live Context Zones
+Strefy interfejsu zmieniają się subtelnie w zależności od typu aktywności – np. analiza danych → pojawiają się półprzezroczyste wykresy i modele predykcyjne w tle.
+
+3. Search & Command Palette
+Centralny element – jak Spotlight w macOS + terminal + AI prompt.
+
+Estetycznie: półprzezroczysty pasek z dyskretnym neonowym obramowaniem, wysuwający się z gestu lub skrótu.
+
+Typografia:
+Font: Modernistyczny, ale nie zimny – np. IBM Plex Sans, Inter, lub Space Grotesk
+
+Hierarchia tekstów oparta na świetle i rozmiarze, nie kolorze – żeby nie „krzyczeć”, tylko prowadzić wzrok
+
+Wizualizacje danych:
+W stylu „ambient” – grafy, wykresy i sieci neuronowe w tle pulpitu lub dashboardów, półprzezroczyste, reagujące na kontekst użytkownika
+
+Wersja pro: 3D flow charts lub sieci wiedzy jako eksploracyjne UI, które AI rozbudowuje na bieżąco
+
+Futurystyczne detale:
+Delikatny blur i szklane efekty (glassmorphism) dla paneli
+
+Subtelne animacje przejść między aplikacjami (fade-ins, morphs, fluid motion)
+
+Inteligentne „ładowanie” – nie przez spinnery, ale przez subtelne rozszerzanie neuronowych struktur
+
+Responsywność:
+Ten styl musi wyglądać perfekcyjnie zarówno na ultrawide monitorze jak i ekranie mobilnym – z myślą o przyszłości, gdzie AI-Inside działa jako Twój rozszerzony "avatar" na wszystkich urządzeniach.
+
+Hasło przewodnie UI do dopisania do twoich propozycji:
+“System myśli, Ty tworzysz.”
+
+UWAGA:
+Błędne założenia możesz krytykować :) 

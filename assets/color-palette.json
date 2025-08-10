@@ -1,0 +1,65 @@
+## 📁 Plik 12: color-palette.json
+**Instrukcja:** Skopiuj → Notatnik → Zapisz jako `color-palette.json`
+
+```json
+{
+  "brand": "BUILD ON AI",
+  "version": "1.0.0",
+  "colors": {
+    "primary": {
+      "cyan": {
+        "hex": "#00FFFF",
+        "rgb": "rgb(0, 255, 255)",
+        "rgba": "rgba(0, 255, 255, 1)",
+        "usage": "Logo, buttons, accents"
+      }
+    },
+    "secondary": {
+      "lightBlue": {
+        "hex": "#88CCFF",
+        "rgb": "rgb(136, 204, 255)",
+        "rgba": "rgba(136, 204, 255, 1)",
+        "usage": "Subtitles, supporting text"
+      }
+    },
+    "background": {
+      "black": {
+        "hex": "#0A0A0A",
+        "rgb": "rgb(10, 10, 10)",
+        "usage": "Main background"
+      },
+      "darkBlue": {
+        "hex": "#1A1A2E",
+        "rgb": "rgb(26, 26, 46)",
+        "usage": "Gradient start"
+      },
+      "navy": {
+        "hex": "#16213E",
+        "rgb": "rgb(22, 33, 62)",
+        "usage": "Gradient end"
+      }
+    },
+    "text": {
+      "white": {
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255, 255, 255)",
+        "usage": "Primary text"
+      },
+      "cyan": {
+        "hex": "#00FFFF",
+        "rgb": "rgb(0, 255, 255)",
+        "usage": "Accent text"
+      },
+      "lightBlue": {
+        "hex": "#88CCFF",
+        "rgb": "rgb(136, 204, 255)",
+        "usage": "Secondary text"
+      }
+    }
+  },
+  "gradients": {
+    "primary": "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)",
+    "secondary": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "accent": "linear-gradient(90deg, transparent, #00ffff, transparent)"
+  }
+}

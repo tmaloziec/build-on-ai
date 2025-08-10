@@ -1,0 +1,66 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)" rx="20"/>
+  
+  <!-- Background dashed lines -->
+  <line x1="40" y1="60" x2="160" y2="80" stroke="#00ffff" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(15 100 70)"/>
+  <line x1="720" y1="120" x2="600" y2="100" stroke="#00ffff" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(-25 660 110)"/>
+  <line x1="120" y1="240" x2="220" y2="260" stroke="#00ffff" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(45 170 250)"/>
+  <line x1="640" y1="360" x2="560" y2="340" stroke="#00ffff" stroke-width="1" stroke-dasharray="8,4" opacity="0.3" transform="rotate(-15 600 350)"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="160" cy="150" r="3" fill="#00ffff" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="210" r="3" fill="#00ffff" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="120" cy="390" r="3" fill="#00ffff" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="680" cy="420" r="3" fill="#00ffff" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Neural connections -->
+  <line x1="160" y1="150" x2="460" y2="170" stroke="#00ffff" stroke-width="1" opacity="0.6">
+    <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite"/>
+  </line>
+  <line x1="120" y1="270" x2="470" y2="250" stroke="#00ffff" stroke-width="1" opacity="0.6">
+    <animate attributeName="opacity" values="0;0.8;0" dur="3s" begin="1s" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Main title -->
+  <text x="400" y="120" font-family="Segoe UI, sans-serif" font-size="48" font-weight="800" 
+        fill="#ffffff" text-anchor="middle" letter-spacing="4px" filter="url(#glow)">
+    BUILD ON AI
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="480" font-family="Segoe UI, sans-serif" font-size="24" font-weight="300" 
+        fill="#00ffff" text-anchor="middle" letter-spacing="2px" opacity="0.9">
+    Linux for Engineers
+  </text>
+  
+  <!-- Tagline -->
+  <text x="400" y="520" font-family="Segoe UI, sans-serif" font-size="14" 
+        fill="#88ccff" text-anchor="middle" letter-spacing="1px" opacity="0.7">
+    IT • Civil • Mechanical • Automation • Mechatronics
+  </text>
+</svg>

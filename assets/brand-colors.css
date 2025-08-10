@@ -1,0 +1,112 @@
+/* BUILD ON AI - Brand Colors */
+
+:root {
+    /* Primary Colors */
+    --primary-cyan: #00ffff;
+    --primary-cyan-rgb: 0, 255, 255;
+    
+    /* Secondary Colors */
+    --secondary-light-blue: #88ccff;
+    --secondary-light-blue-rgb: 136, 204, 255;
+    
+    /* Background Colors */
+    --background-black: #0a0a0a;
+    --background-black-rgb: 10, 10, 10;
+    --background-dark-blue: #1a1a2e;
+    --background-dark-blue-rgb: 26, 26, 46;
+    --background-navy: #16213e;
+    --background-navy-rgb: 22, 33, 62;
+    
+    /* Text Colors */
+    --text-white: #ffffff;
+    --text-white-rgb: 255, 255, 255;
+    --text-cyan: #00ffff;
+    --text-cyan-rgb: 0, 255, 255;
+    --text-light-blue: #88ccff;
+    --text-light-blue-rgb: 136, 204, 255;
+    --text-gray: #cccccc;
+    --text-gray-rgb: 204, 204, 204;
+    
+    /* Gradient Definitions */
+    --gradient-primary: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    --gradient-secondary: linear-gradient(135deg, #1a1a2e, #16213e);
+    --gradient-accent: linear-gradient(90deg, transparent, #00ffff, transparent);
+    
+    /* Shadow Colors */
+    --shadow-cyan: rgba(0, 255, 255, 0.8);
+    --shadow-cyan-soft: rgba(0, 255, 255, 0.4);
+    --shadow-cyan-hard: rgba(0, 255, 255, 1);
+    
+    /* Border Colors */
+    --border-cyan: #00ffff;
+    --border-gray: #333333;
+    --border-white-soft: rgba(255, 255, 255, 0.1);
+}
+
+/* Color utility classes */
+.color-primary { color: var(--primary-cyan); }
+.color-secondary { color: var(--secondary-light-blue); }
+.color-white { color: var(--text-white); }
+.color-gray { color: var(--text-gray); }
+
+.bg-primary { background-color: var(--primary-cyan); }
+.bg-secondary { background-color: var(--secondary-light-blue); }
+.bg-dark { background-color: var(--background-black); }
+.bg-navy { background-color: var(--background-navy); }
+
+.bg-gradient-primary { background: var(--gradient-primary); }
+.bg-gradient-secondary { background: var(--gradient-secondary); }
+
+.border-primary { border-color: var(--border-cyan); }
+.border-gray { border-color: var(--border-gray); }
+
+/* Glow effects using brand colors */
+.glow-primary {
+    box-shadow: 0 0 20px var(--shadow-cyan);
+}
+
+.glow-soft {
+    box-shadow: 0 0 10px var(--shadow-cyan-soft);
+}
+
+.text-glow {
+    text-shadow: 
+        0 0 20px var(--shadow-cyan),
+        0 0 40px var(--shadow-cyan-soft);
+}
+
+/* Color combinations for different contexts */
+.theme-dark {
+    background: var(--background-black);
+    color: var(--text-white);
+}
+
+.theme-gradient {
+    background: var(--gradient-primary);
+    color: var(--text-white);
+}
+
+.theme-accent {
+    background: var(--background-navy);
+    color: var(--primary-cyan);
+    border: 1px solid var(--border-cyan);
+}
+
+/* Opacity variants */
+.opacity-10 { opacity: 0.1; }
+.opacity-20 { opacity: 0.2; }
+.opacity-30 { opacity: 0.3; }
+.opacity-40 { opacity: 0.4; }
+.opacity-50 { opacity: 0.5; }
+.opacity-60 { opacity: 0.6; }
+.opacity-70 { opacity: 0.7; }
+.opacity-80 { opacity: 0.8; }
+.opacity-90 { opacity: 0.9; }
+
+/* RGBA helpers for custom transparency */
+.bg-primary-10 { background-color: rgba(var(--primary-cyan-rgb), 0.1); }
+.bg-primary-20 { background-color: rgba(var(--primary-cyan-rgb), 0.2); }
+.bg-primary-30 { background-color: rgba(var(--primary-cyan-rgb), 0.3); }
+
+.bg-dark-80 { background-color: rgba(var(--background-black-rgb), 0.8); }
+.bg-dark-90 { background-color: rgba(var(--background-black-rgb), 0.9); }
