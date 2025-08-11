@@ -4,7 +4,7 @@ echo "Package: build-on-ai-core"
 echo "Version: 1.0.0"
 
 echo "PKGBUILD syntax check..."
-cd ../packages/build-on-ai-core/
+cd ~/build-on-ai/packages/build-on-ai-core/  # <- Zmiana tutaj
 if bash -n PKGBUILD; then
     echo "✓ PKGBUILD syntax: OK"
 else
