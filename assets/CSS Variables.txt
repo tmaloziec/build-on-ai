@@ -1,5 +1,0 @@
-:root {
-    --primary-color: #00ffff;
-    --secondary-color: #88ccff;
-    --background-dark: #0a0a0a;
-}
