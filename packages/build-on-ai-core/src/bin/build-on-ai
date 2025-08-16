@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# build-on-ai - Build on AI System Manager
+# 
+# Purpose: Main system management script for Build on AI distribution
+# - Shows system status and configuration
+# - Displays installed version information
+# - Provides entry point for system management tasks
+#
+# Usage: build-on-ai [command]
+# Author: Build on AI Team
+# Version: 1.0.0
+#
+
+echo "Build on AI System Manager"
+echo "Status: Core package installed"
+
+# Check if version file exists and display version
+if [ -f /etc/build-on-ai/version ]; then
+    echo "Version: $(cat /etc/build-on-ai/version)"
+else
+    echo "Version: Unknown - configuration file missing"
+fi
+
+# Show basic system info
+echo "System: $(uname -s) $(uname -m)"
+echo "Kernel: $(uname -r)"

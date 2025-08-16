@@ -1,0 +1,64 @@
+# Maintainer: Tomek <tomek@buildonai.dev>
+#
+# Build on AI Core Package
+# 
+# Purpose: Core package for Build on AI Linux distribution
+# - Installs essential AI/ML development tools
+# - Provides base system configuration 
+# - Sets up command-line AI assistant interface
+# - Establishes foundation for engineering workflows
+#
+# This package creates the foundation for AI-powered engineering tools
+# and provides the basic infrastructure for Build on AI distribution.
+#
+
+pkgname=build-on-ai-core
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Build on AI Core - Essential tools for engineers and AI/ML development"
+arch=('any')
+url="https://github.com/tmaloziec/build-on-ai"
+license=('MIT')
+
+# Core dependencies - essential tools for AI/ML development
+depends=(
+    'python'                    # Python runtime
+    'python-pip'               # Package manager for Python
+    'python-numpy'             # Numerical computing
+    'python-scipy'             # Scientific computing
+    'python-matplotlib'        # Plotting and visualization
+    'python-pandas'            # Data analysis and manipulation
+    'python-scikit-learn'      # Machine learning library
+    'jupyter-notebook'         # Interactive development environment
+    'git'                      # Version control system
+    'wget'                     # File downloading utility
+    'curl'                     # Data transfer tool
+    'htop'                     # Process monitoring
+    'tree'                     # Directory listing utility
+    'nano'                     # Text editor (user-friendly)
+    'vim'                      # Text editor (advanced)
+    'openssh'                  # Secure Shell for remote access
+)
+
+# Optional dependencies - advanced AI/ML frameworks
+optdepends=(
+    'python-tensorflow: Deep Learning framework for neural networks'
+    'python-pytorch: PyTorch deep learning framework'
+    'docker: Containerization for AI model deployment'
+    'code: Visual Studio Code for development'
+)
+
+package() {
+    # Create system directories
+    install -dm755 "$pkgdir/etc/build-on-ai"
+    install -dm755 "$pkgdir/usr/share/build-on-ai"
+    install -dm755 "$pkgdir/usr/bin"
+    
+    # Install configuration files
+    echo "BUILD_ON_AI_VERSION=$pkgver" > "$pkgdir/etc/build-on-ai/version"
+    echo "Build on AI Core $pkgver installed successfully" > "$pkgdir/usr/share/build-on-ai/welcome.txt"
+    
+    # Install executable scripts with proper permissions
+    install -m755 src/bin/ai "$pkgdir/usr/bin/ai"
+    install -m755 src/bin/build-on-ai "$pkgdir/usr/bin/build-on-ai"
+}

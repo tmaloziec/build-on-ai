@@ -1,39 +1,309 @@
-# Maintainer: Tomek <tomek@build-on-ai.dev>
+# Maintainer: Tomek <tomek@buildonai.dev>
+#
+# Build on AI Core Package
+# 
+# Purpose: Core package for Build on AI Linux distribution
+# - Installs essential AI/ML development tools
+# - Provides base system configuration 
+# - Sets up command-line AI assistant interface
+# - Establishes foundation for engineering workflows
+#
+# This package creates the foundation for AI-powered engineering tools
+# and provides the basic infrastructure for Build on AI distribution.
+# Uses embedded scripts approach to ensure compatibility across all systems.
+#
+
 pkgname=build-on-ai-core
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="Build on AI Core - Essential tools for engineers and AI/ML development"
 arch=('any')
-url="https://github.com/build-on-ai/build-on-ai"
+url="https://github.com/tmaloziec/build-on-ai"
 license=('MIT')
+
+# Core dependencies - essential tools for AI/ML development
 depends=(
-    'python'
-    'python-pip'
-    'python-numpy'
-    'python-scipy'
-    'python-matplotlib'
-    'python-pandas'
-    'python-scikit-learn'
-    'jupyter-notebook'
-    'git'
-    'wget'
-    'curl'
-    'htop'
-    'tree'
-    'nano'
-    'vim'
-    'openssh'
+    'python'                    # Python runtime
+    'python-pip'               # Package manager for Python
+    'python-numpy'             # Numerical computing
+    'python-scipy'             # Scientific computing
+    'python-matplotlib'        # Plotting and visualization
+    'python-pandas'            # Data analysis and manipulation
+    'python-scikit-learn'      # Machine learning library
+    'jupyter-notebook'         # Interactive development environment
+    'git'                      # Version control system
+    'wget'                     # File downloading utility
+    'curl'                     # Data transfer tool
+    'htop'                     # Process monitoring
+    'tree'                     # Directory listing utility
+    'nano'                     # Text editor (user-friendly)
+    'vim'                      # Text editor (advanced)
+    'openssh'                  # Secure Shell for remote access
 )
+
+# Optional dependencies - advanced AI/ML frameworks
 optdepends=(
-    'python-tensorflow: Deep Learning framework'
-    'python-pytorch: PyTorch deep learning'
-    'docker: Containerization'
-    'code: Visual Studio Code'
+    'python-tensorflow: Deep Learning framework for neural networks'
+    'python-pytorch: PyTorch deep learning framework'
+    'docker: Containerization for AI model deployment'
+    'code: Visual Studio Code for development'
 )
 
 package() {
+    # Create system directories
     install -dm755 "$pkgdir/etc/build-on-ai"
     install -dm755 "$pkgdir/usr/share/build-on-ai"
+    install -dm755 "$pkgdir/usr/bin"
+    
+    # Install configuration files
     echo "BUILD_ON_AI_VERSION=$pkgver" > "$pkgdir/etc/build-on-ai/version"
     echo "Build on AI Core $pkgver installed successfully" > "$pkgdir/usr/share/build-on-ai/welcome.txt"
+    
+    # Create main 'ai' command script (embedded for compatibility)
+    # This is the primary interface for Build on AI system
+    cat > "$pkgdir/usr/bin/ai" << 'EOF'
+#!/bin/bash
+#
+# ai - Build on AI Assistant Command
+#
+# Purpose: Main command-line interface for AI assistance
+# - Provides AI-powered help for engineers
+# - Entry point for AI models and tools
+# - Handles user queries and system interaction
+# - Future: Will include AI debugging capabilities
+#
+# Usage: ai [command] [options]
+# Author: Build on AI Team  
+# Version: 1.0.0
+#
+
+echo "Build on AI - AI Assistant for Engineers"
+echo "Version: 1.0.0"
+echo ""
+echo "Usage: ai [command] [options]"
+echo ""
+echo "Available Commands:"
+echo "  --version    Show version information"
+echo "  --help       Show this help message"
+echo "  status       Show system status and health"
+echo "  models       List available AI models (future)"
+echo "  chat         Start interactive AI chat (future)"
+echo "  debug        AI-powered debugging system (preview)"
+echo ""
+echo "Examples:"
+echo "  ai status    # Check system status"
+echo "  ai debug     # Preview AI debugging features"
+echo ""
+
+# Handle command line arguments
+case "$1" in
+    --version|version)
+        echo "Build on AI Core Version: 1.0.0"
+        ;;
+    --help|help)
+        # Help already shown above
+        exit 0
+        ;;
+    status)
+        echo "=== Build on AI System Status ==="
+        echo "Core Package: Installed and Active"
+        if [ -f /etc/build-on-ai/version ]; then
+            echo "Version: $(cat /etc/build-on-ai/version)"
+        fi
+        echo "System: $(uname -s) $(uname -m)"
+        echo "Kernel: $(uname -r)"
+        echo "Python: $(python3 --version 2>/dev/null || echo 'Not found')"
+        echo "Status: ✅ Ready for AI development"
+        ;;
+    debug)
+        echo "🧠 AI-Powered Debugging System (Preview)"
+        echo ""
+        echo "Future capabilities:"
+        echo "  • Intelligent error analysis"
+        echo "  • Root cause identification"
+        echo "  • Automated fix suggestions"
+        echo "  • Best practices recommendations"
+        echo ""
+        echo "Coming soon in build-on-ai-debug package!"
+        ;;
+    models)
+        echo "🤖 AI Models Management"
+        echo "This feature will be available in future releases."
+        echo "Will support: ollama, local models, cloud APIs"
+        ;;
+    chat)
+        echo "💬 Interactive AI Chat"
+        echo "This feature will be available in future releases."
+        echo "Will provide: context-aware assistance for engineers"
+        ;;
+    "")
+        # No arguments - show brief help
+        echo "Type 'ai --help' for usage information"
+        ;;
+    *)
+        echo "Unknown command: $1"
+        echo "Type 'ai --help' for available commands"
+        exit 1
+        ;;
+esac
+EOF
+
+    # Create 'build-on-ai' system management script (embedded)
+    # This handles system-level operations and configuration
+    cat > "$pkgdir/usr/bin/build-on-ai" << 'EOF'
+#!/bin/bash
+#
+# build-on-ai - Build on AI System Manager
+# 
+# Purpose: Main system management script for Build on AI distribution
+# - Shows system status and configuration
+# - Displays installed version information
+# - Provides entry point for system management tasks
+# - Manages Build on AI ecosystem components
+#
+# Usage: build-on-ai [command]
+# Author: Build on AI Team
+# Version: 1.0.0
+#
+
+echo "Build on AI System Manager"
+echo "=========================="
+echo ""
+
+# Display basic system information
+echo "Status: Core package installed and active"
+echo ""
+
+# Show version information
+if [ -f /etc/build-on-ai/version ]; then
+    echo "Version Information:"
+    echo "  Build on AI: $(cat /etc/build-on-ai/version)"
+else
+    echo "Version: Unknown - configuration file missing"
+    echo "Warning: System may not be properly configured"
+fi
+
+# Display system details
+echo ""
+echo "System Information:"
+echo "  OS: $(uname -s)"
+echo "  Architecture: $(uname -m)"
+echo "  Kernel: $(uname -r)"
+echo "  Hostname: $(hostname)"
+
+# Check Python environment
+echo ""
+echo "Development Environment:"
+if command -v python3 >/dev/null 2>&1; then
+    echo "  Python: $(python3 --version)"
+else
+    echo "  Python: ❌ Not found"
+fi
+
+if command -v pip3 >/dev/null 2>&1; then
+    echo "  Pip: $(pip3 --version | cut -d' ' -f1-2)"
+else
+    echo "  Pip: ❌ Not found"
+fi
+
+if command -v git >/dev/null 2>&1; then
+    echo "  Git: $(git --version | cut -d' ' -f1-3)"
+else
+    echo "  Git: ❌ Not found"
+fi
+
+# Check for AI-related tools
+echo ""
+echo "AI Tools Status:"
+if command -v jupyter >/dev/null 2>&1; then
+    echo "  Jupyter: ✅ Available"
+else
+    echo "  Jupyter: ❌ Not installed"
+fi
+
+if python3 -c "import numpy" 2>/dev/null; then
+    echo "  NumPy: ✅ Available"
+else
+    echo "  NumPy: ❌ Not available"
+fi
+
+if python3 -c "import pandas" 2>/dev/null; then
+    echo "  Pandas: ✅ Available"
+else
+    echo "  Pandas: ❌ Not available"
+fi
+
+# System health check
+echo ""
+echo "System Health:"
+echo "  Memory: $(free -h | grep Mem | awk '{print $3 "/" $2}')"
+echo "  Disk Usage: $(df -h / | tail -1 | awk '{print $3 "/" $2 " (" $5 " used)"}')"
+echo "  Load Average: $(uptime | awk -F'load average:' '{print $2}')"
+
+# Footer with next steps
+echo ""
+echo "Next Steps:"
+echo "  • Use 'ai --help' to explore AI assistant features"
+echo "  • Install optional dependencies for advanced features"
+echo "  • Check documentation at: https://github.com/tmaloziec/build-on-ai"
+echo ""
+echo "Build on AI - Empowering Engineers with AI ⚡"
+EOF
+
+    # Set executable permissions for both scripts
+    chmod +x "$pkgdir/usr/bin/ai"
+    chmod +x "$pkgdir/usr/bin/build-on-ai"
+    
+    # Create additional system integration files
+    # These will be used by future packages for system integration
+    install -dm755 "$pkgdir/usr/share/build-on-ai/integration"
+    
+    # Create integration metadata for future packages
+    cat > "$pkgdir/usr/share/build-on-ai/integration/core.conf" << 'EOF'
+# Build on AI Core Integration Configuration
+# This file is used by other Build on AI packages for system integration
+
+BUILDONAI_CORE_VERSION=1.0.0
+BUILDONAI_CORE_PATH=/usr/share/build-on-ai
+BUILDONAI_CONFIG_PATH=/etc/build-on-ai
+BUILDONAI_BIN_PATH=/usr/bin
+
+# Features provided by core package
+FEATURES_AVAILABLE="basic_ai_interface system_management version_info health_check"
+
+# Future integration points
+INTEGRATION_READY="debugging models cloud_api enterprise"
+EOF
+
+    chmod 644 "$pkgdir/usr/share/build-on-ai/integration/core.conf"
+}
+
+# Post-installation script hook (if needed)
+# This function runs after package installation
+post_install() {
+    echo ""
+    echo "🚀 Build on AI Core has been installed successfully!"
+    echo ""
+    echo "Quick Start:"
+    echo "  ai --help           # Explore AI assistant features"
+    echo "  build-on-ai         # Check system status"
+    echo "  ai status           # Verify installation"
+    echo ""
+    echo "Next Steps:"
+    echo "  • Install build-on-ai-models for AI capabilities"
+    echo "  • Install build-on-ai-debug for advanced debugging"
+    echo "  • Visit: https://github.com/tmaloziec/build-on-ai"
+    echo ""
+}
+
+# Pre-removal script (cleanup)
+pre_remove() {
+    echo "Removing Build on AI Core..."
+    # Clean up any temporary files if needed
+}
+
+# Post-removal script
+post_remove() {
+    echo "Build on AI Core has been removed."
+    echo "Configuration files in /etc/build-on-ai have been preserved."
 }
