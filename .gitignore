@@ -34,6 +34,3 @@ local.conf
 private/
 secrets/
 
-# Development scripts (keep them local)
-claude-*.sh
-install-*.sh
